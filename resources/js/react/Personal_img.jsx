@@ -10,6 +10,7 @@ border-radius: 50%;
 position: absolute;
 top: -40px;
 border: 5px solid white;
+
 &::before{
 content: '';
 background: ${(props)=> props.bg};
@@ -21,14 +22,22 @@ position: absolute;
 top: -30px;
 left: -30px;
 scale: .9;
+box-shadow:  0 0 .6rem 3px rgb(0, 0, 0, 0.2), 0 0 .6rem -3px rgb(0, 0, 0, 0.2);
 }
-
+img{
+    position: absolute;
+ top: 0;
+ left: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
 .st0{ fill: #2F2E41}
 .st1{fill:#FFB6B6}
 /* .st2{fill:#6C63FF} */
 `
 function check_gender (props){
-    if(props.gender == 'female'){
+    if(props.gender == 'Female'){
        return (<>
           <svg className="Layer_1" x="0px" y="0px"
           viewBox="0 0 100 100" xmlSpace="preserve">
@@ -51,8 +60,7 @@ function check_gender (props){
          c0.5-0.6,1.1-1.3,1.4-2.1c0.2-0.8-0.1-1.8-0.9-2.1"/>
           </svg>
           </>)
-}
-if(props.gender == 'male'){
+}else if(props.gender == 'Male'){
     return(<>
     <svg className="Layer_1" x="0px" y="0px"
 	 viewBox="0 0 532 532"  xmlSpace="preserve">
@@ -66,6 +74,8 @@ if(props.gender == 'male'){
         c1-2.9,1.3-4.8,1.3-4.8l97.6,46.1c6.4,9.1,8.9,28.7,9.4,50.7C433.1,471.1,433.2,472,433.2,473z"/>
     </svg>
     </>)
+}else{
+    return( <img src={props.avatar} ></img>)
 }
 
 }
