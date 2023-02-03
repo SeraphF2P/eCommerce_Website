@@ -23,7 +23,6 @@ export default ({ isplaying, duration, isWorking }) => {
         setTimeout(() => {
             if (width < 300 && isplaying) {
                 setWidth((prevState) => prevState + percent);
-                console.log(width);
             } else {
                 isWorking(false);
             }
