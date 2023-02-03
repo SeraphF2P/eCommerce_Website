@@ -4,8 +4,7 @@ import { Box } from "@mui/material";
 import { useScrollSensore } from "../../my/my";
 import Nav from "./Nav";
 import Search_sec from "./Search_sec";
-import {  useCurrentSongUpdate } from "../DataProvider";
-
+import { useCurrentSongUpdate } from "../DataProvider";
 
 const Div = styled(Box)`
     position: fixed;
@@ -26,21 +25,17 @@ const Div = styled(Box)`
     transition: transform 0.8s linear;
 `;
 export default () => {
-    const [elementRef, transforming] = useScrollSensore();
-    transforming.current = {
+    const elementRef = useScrollSensore({
         from: "transform :translateY(0px)",
         to: "transform :translateY(-64px)",
-    };
+    });
+
     const setsongIndexs = useCurrentSongUpdate();
     return (
         <>
             <Div component="header" ref={elementRef}>
-                <Nav
-                 
-                    setsongIndexs={setsongIndexs}
-                />
+                <Nav setsongIndexs={setsongIndexs} />
                 <Search_sec setsongIndexs={setsongIndexs} />
-                
             </Div>
         </>
     );

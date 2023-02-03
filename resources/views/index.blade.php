@@ -6,7 +6,7 @@
 
         <title>Laravel</title>
         @vite(['resources/css/app.css'])
-        @vite(['resources/js/index.js'])
+        @vite(['resources/js/app.js'])
     </head>
     <body class="antialiased">
         <div id="root"></div>

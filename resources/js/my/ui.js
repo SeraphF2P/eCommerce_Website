@@ -1,6 +1,16 @@
 import { lazy } from "react";
 
-
+export function twoClassesToggler(ele,startingClass,endingClass){
+    if(ele.classList.contains(startingClass)){
+        ele.classList.add(endingClass);
+        ele.classList.remove(startingClass);
+    }else if ((ele.classList.contains(endingClass))){
+        ele.classList.remove(endingClass);
+        ele.classList.add(startingClass);
+    }else{
+        ele.classList.add(startingClass);
+    }
+}
 export function intersecObserveToggler(className, toggledClass, options) {
     const { root, rootMargin, threshold } = options;
     const entries = [...document.querySelectorAll(`${className}`)];
@@ -15,10 +25,7 @@ export function intersecObserveToggler(className, toggledClass, options) {
         },
         { root, rootMargin, threshold }
     );
-
     entries.map((el) => observer.observe(el));
-
-
     return entries;
 }
 export function lazyLoading(path, namedExport) {
