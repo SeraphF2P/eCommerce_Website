@@ -39,10 +39,6 @@ const Styles = styled(Box)`
     position: fixed;
     bottom: 0;
     margin-inline: auto;
-    /* &:not(.pageEnd_anim) {
-        animation: ${slideOut} .6s linear .6s reverse forwards,
-            ${slideIn} 1s linear reverse ;
-    } */
     &.pageEnd_anim {
         animation: ${slideOut} 0.6s linear, ${slideIn} 1s linear 0.6s forwards;
     }
@@ -60,7 +56,7 @@ const Styles = styled(Box)`
         align-items: center;
         justify-content: space-between;
         background: ${tP("player")};
-        color: ${tP("text")};
+        color: white;
         background: hsl(0, 0%, 0%, 0.6);
         backdrop-filter: blur(40px);
         .title {
@@ -70,8 +66,9 @@ const Styles = styled(Box)`
         .controls {
             display: flex;
             align-items: center;
+            gap: 8px;
             .btn {
-                font-size: 60px;
+                font-size: 40px;
                 cursor: pointer;
                 fill: ${tP("player_icon")};
                 &:hover {
@@ -79,7 +76,7 @@ const Styles = styled(Box)`
                 }
             }
             .pp {
-                font-size: 100px;
+                font-size: 80px;
             }
         }
     }

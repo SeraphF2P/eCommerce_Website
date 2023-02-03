@@ -4,7 +4,6 @@ import { createRoot } from "react-dom/client";
 import Main from "./main/Main";
 import Header from "./header/Header";
 import DataProvider from "./DataProvider";
-import Task from "./Task";
 
 function App() {
     return (

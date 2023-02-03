@@ -48,8 +48,10 @@ export const themes = [
         card: "#a21aeb",
         theme_btn: "#a21aeb",
         text: "#0d0c0c",
-        player: "#0d0c0c",
+        player: "#fefefe",
+        player_icon: "#cacaca",
     },
+    
 ];
 
 export default ({ children }) => {

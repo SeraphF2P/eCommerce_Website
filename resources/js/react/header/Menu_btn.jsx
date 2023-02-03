@@ -13,6 +13,7 @@ const Styles = styled(Box)`
     padding: 1rem;
     background-color: transparent;
     z-index: 40;
+    cursor: pointer;
     span {
         z-index: -1;
         background: ${({ theme }) => {
