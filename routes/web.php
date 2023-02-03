@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/music_application', function () {
+Route::get('/', function () {
     return view('index');
 });
