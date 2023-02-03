@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 26.3" style="enable-background:new 0 0 32 26.3;" xml:space="preserve">
+<symbol  id="_x35_274">
+</symbol>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="32" height="26.3"/>
+	</defs>
+	<clipPath id="SVGID_00000097495380011978856140000017869843562832807347_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_00000097495380011978856140000017869843562832807347_);">
+		
+			<use xlink:href="#_x35_274"  width="-32766" height="-32766" x="16383" y="16383" transform="matrix(1 0 0 1 -7872 8402)" style="overflow:visible;"/>
+	</g>
+</g>
+</svg>

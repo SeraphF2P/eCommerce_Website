@@ -1,10 +1,72 @@
+* {
+    font-family: serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+*,
+*::before,
+*::after {
+    transition: color 0.3s linear, background 0.3s linear;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+p {
+    font-size: 1rem;
+}
+.remove_scroll_bar {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.remove_scroll_bar::-webkit-scrollbar {
+    display: none;
+}
 #root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body {
     width: 100%;
-    background-position: bottom center;
-    background-size: cover;
-    background-image: url("/public/images/scott-webb-GQD3Av_9A88-unsplash.jpg");
+    height: 100%;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+#root::-webkit-scrollbar {
+    display: none;
+}
+.v_hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
 }
