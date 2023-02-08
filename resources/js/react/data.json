@@ -1,0 +1,362 @@
+[
+    {
+        "seller_name": "Nike, Inc.",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 1,
+                "color": "green",
+                "price": "129.99",
+                "product_name": "Nike Air Zoom Pegasus 38 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8UnVubmluZyUyMFNob2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "The Nike Air Zoom Pegasus 38 Running Shoe features a breathable mesh upper and Zoom Air units in the heel and forefoot for cushioning. With a responsive foam midsole and a secure fit, this shoe is a reliable choice for runners of all levels.",
+            },
+            {
+                "id": 21,
+                "color": "red",
+                "price": "119.99",
+                "product_name": "Nike Zoom Pegasus 37 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Get a smooth and comfortable ride with the Nike Zoom Pegasus 37 Running Shoe. This shoe features a comfortable and breathable upper, Zoom Air technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 30mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "ASICS  Corporation",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 4,
+                "color": "white",
+                "product_name": "ASICS Gel-Nimbus 22 Running Shoe",
+                "price": "139.99",
+                "product_image_url": "https://images.unsplash.com/photo-1575456456278-936c89ccdb7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8QVNJQ1MlMjAlMjBSdW5uaW5nJTIwU2hvZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Get the ultimate in comfort and support with the ASICS Gel-Nimbus 22 Running Shoe. This shoe features a breathable mesh upper, Gel technology in the midsole for cushioning, and a durable outsole for grip. Perfect for long distance runs."
+            },
+            {
+                "id": 16,
+                "color": "blue",
+                "product_image_url": "https://images.unsplash.com/photo-1609250291996-fdebe6020a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "product_name": "ASICS Gel-Kayano 26 Running Shoe",
+                "price": "139.99",
+                "description": "Get the ultimate in stability and comfort with the ASICS Gel-Kayano 26 Running Shoe. This shoe features a comfortable and breathable upper, Gel technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 34mm."
+            },
+            {
+                "id": 26,
+                "color": "black",
+                "price": "139.99",
+                "product_name": "Asics Gel-Kayano 26 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1643584549037-96e2a1652a1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk0fHxSdW5uaW5nJTIwU2hvZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Experience a comfortable and supportive ride with the Asics Gel-Kayano 26 Running Shoe. This shoe features a comfortable and breathable upper, Gel technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 33mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "New Balance Athletics, Inc.",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 5,
+                "color": "blue",
+                "price": "149.99",
+                "product_name": "New Balance Fresh Foam 1080v10 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1560072810-1cffb09faf0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fEFTSUNTJTIwJTIwUnVubmluZyUyMFNob2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Get the ultimate in comfort and support with the New Balance Fresh Foam 1080v10 Running Shoe. This shoe features a breathable mesh upper, Fresh Foam technology in the midsole for cushioning, and a durable outsole for grip."
+            },
+            {
+                "id": 12,
+                "color": "salmon",
+                "price": "139.99",
+                "product_image_url": "https://images.unsplash.com/photo-1608667508764-33cf0726b13a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8UnVubmluZyUyMFNob2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                "product_name": "New Balance Fresh Foam 1080v9 Running Shoe",
+                "description": "Experience a comfortable and supportive ride with the New Balance Fresh Foam 1080v9 Running Shoe. This shoe features a breathable mesh upper, Fresh Foam technology in the midsole for cushioning, and a durable outsole for grip. Perfect for daily training and long distance runs. The shoe stack is 32mm."
+            },
+            {
+                "id": 20,
+                "color": "brown",
+                "price": "139.99",
+                "product_name": "New Balance Fresh Foam 1080v10 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Experience a comfortable and cushioned ride with the New Balance Fresh Foam 1080v10 Running Shoe. This shoe features a comfortable and breathable upper, Fresh Foam technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 32mm."
+            },
+            {
+                "id": 29,
+                "price": "149.99",
+                "color": "red",
+                "product_name": "New Balance Fresh Foam 1080v9 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1580902394724-b08ff9ba7e8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjkwfHxSdW5uaW5nJTIwU2hvZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Experience a comfortable and plush ride with the New Balance Fresh Foam 1080v9 Running Shoe. This shoe features a comfortable and breathable upper, Fresh Foam technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 33mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "Adidas AG",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 13,
+                "price": "159.99",
+                "color": "red",
+                "product_name": "Adidas Ultraboost 19 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8UnVubmluZyUyMFNob2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Take your running performance to new heights with the Adidas Ultraboost 19 Running Shoe. This shoe features a comfortable and breathable upper, Boost technology in the midsole for cushioning, and a durable outsole for grip. Ideal for high-intensity runs and competitive races. The shoe stack is 36mm."
+            },
+            {
+                "id": 22,
+                "color": "blue",
+                "price": "159.99",
+                "product_name": "Adidas Ultraboost 21 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fFJ1bm5pbmclMjBTaG9lfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Get a boost in energy with the Adidas Ultraboost 21 Running Shoe. This shoe features a comfortable and breathable upper, Boost technology in the midsole for cushioning, and a durable outsole for grip. Ideal for high-intensity runs and competitive races. The shoe stack is 36mm."
+            },
+            {
+                "id": 30,
+                "color": "white",
+                "price": "159.99",
+                "product_name": "Adidas Ultraboost 19 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1625875061556-7b794d9c4a4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjI5fHxSdW5uaW5nJTIwU2hvZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Experience a comfortable and energizing ride with the Adidas Ultraboost 19 Running Shoe. This shoe features a comfortable and breathable upper, Boost technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 31mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "Under Armour, Inc.",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 14,
+                "color": "white",
+                "price": "119.99",
+                "product_name": "Under Armour HOVR Phantom Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Get the perfect blend of comfort and performance with the Under Armour HOVR Phantom Running Shoe. This shoe features a breathable mesh upper, HOVR technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 28mm."
+            },
+            {
+                "id": 24,
+                "color": "brown",
+                "price": "119.99",
+                "product_name": "Under Armour HOVR Infinite 2 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1599948126325-0fba3761669a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQ5fHxSdW5uaW5nJTIwU2hvZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Experience a comfortable and energy-returning ride with the Under Armour HOVR Infinite 2 Running Shoe. This shoe features a comfortable and breathable upper, HOVR technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 32mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "Brooks Sports, Inc.",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 15,
+                "price": "129.99",
+                "color": "black",
+                "product_name": "Brooks Ghost 13 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1605408499391-6368c628ef42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Glide through your runs with the Brooks Ghost 13 Running Shoe. This shoe features a comfortable and breathable upper, BioMoGo DNA technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 30mm."
+            },
+            {
+                "id": 27,
+                "price": "129.99",
+                "color": "white",
+                "product_name": "Brooks Ghost 13 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk2fHxSdW5uaW5nJTIwU2hvZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Experience a comfortable and smooth ride with the Brooks Ghost 13 Running Shoe. This shoe features a comfortable and breathable upper, BioMoGo DNA technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and long distance runs. The shoe stack is 31mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "Mizuno USA, Inc.",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 17,
+                "price": "119.99",
+                "color": "black",
+                "product_name": "Mizuno Wave Rider 22 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Get a smooth and stable ride with the Mizuno Wave Rider 22 Running Shoe. This shoe features a comfortable and breathable upper, Wave technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and short distance runs. The shoe stack is 28mm."
+            },
+            {
+                "id": 28,
+                "price": "119.99",
+                "color": "brown",
+                "product_name": "Mizuno Wave Rider 22 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1608363789638-70e879a9d988?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjM1fHxSdW5uaW5nJTIwU2hvZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+                "description": "Experience a comfortable and responsive ride with the Mizuno Wave Rider 22 Running Shoe. This shoe features a comfortable and breathable upper, Wave technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and short distance runs. The shoe stack is 29mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "Reebok International Limited",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 18,
+                "price": "139.99",
+                "color": "pink",
+                "product_name": "Reebok Floatride Run Fast Pro Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Get a fast and responsive ride with the Reebok Floatride Run Fast Pro Running Shoe. This shoe features a comfortable and breathable upper, Floatride technology in the midsole for cushioning, and a durable outsole for grip. Ideal for high-intensity runs and competitive races. The shoe stack is 36mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "Skechers USA, Inc.",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 19,
+                "price": "89.99",
+                "color": "black",
+                "product_name": "Skechers Go Run Ride 7 Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fFJ1bm5pbmclMjBTaG9lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "description": "Get a comfortable and lightweight ride with the Skechers Go Run Ride 7 Running Shoe. This shoe features a breathable mesh upper,Run technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and short distance runs. The shoe stack is 28mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "Puma SE",
+        "type": "shoe",
+        "themes": [
+            {
+                "id": 23,
+                "price": "89.99",
+                "color": "olivedrab",
+                "product_name": "Puma Calibrate Running Shoe",
+                "product_image_url": "https://images.unsplash.com/photo-1556306535-fc6684304af1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fFJ1bm5pbmclMjBTaG9lfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=605",
+                "description": "Get a balanced and comfortable ride with the Puma Calibrate Running Shoe. This shoe features a comfortable and breathable upper, Calibrate technology in the midsole for cushioning, and a durable outsole for grip. Ideal for daily training and short distance runs. The shoe stack is 28mm."
+            }
+        ]
+    },
+    {
+        "seller_name": "apple",
+        "type": "airpods",
+        "themes": [
+            {
+                "id": 1,
+                "color": "black",
+                "price": "15.00",
+                "product_name": "apple I5 airpods",
+                "product_image_url": "images/3d_icons/airpods_black.png",
+                "description": "The latest and greatest airpods from Apple, featuring wireless charging and hands-free Siri access. With a sleek black finish, they are the perfect accessory for any Apple device."
+            },
+            {
+                "id": 2,
+                "color": "blue",
+                "price": "15.00",
+                "product_name": "apple I5 airpods",
+                "product_image_url": "images/3d_icons/airpods_blue.png",
+                "description": "The latest and greatest airpods from Apple, featuring wireless charging and hands-free Siri access. With a sleek black finish, they are the perfect accessory for any Apple device."
+            },
+            {
+                "id": 3,
+                "color": "red",
+                "price": "15.00",
+                "product_name": "apple I5 airpods",
+                "product_image_url": "images/3d_icons/airpods_red.png",
+                "description": "The latest and greatest airpods from Apple, featuring wireless charging and hands-free Siri access. With a sleek black finish, they are the perfect accessory for any Apple device."
+            }
+        ]
+    },
+    {
+        "seller_name": "apple",
+        "type": "watch",
+        "themes": [
+            {
+                "id": 4,
+                "color": "black",
+                "product_name": "apple watch",
+                "price": "50.00",
+                "product_image_url": "images/3d_icons/apple_watch_black.png",
+                "description": "Stay on top of your health and daily routines with the Apple Watch. With a vibrant blue finish and a range of health and fitness tracking features, this is the perfect accessory for anyone looking to stay on top of their game."
+            },
+            {
+                "id": 5,
+                "color": "blue",
+                "product_name": "apple watch",
+                "price": "50.00",
+                "product_image_url": "images/3d_icons/apple_watch_blue.png",
+                "description": "Stay on top of your health and daily routines with the Apple Watch. With a vibrant blue finish and a range of health and fitness tracking features, this is the perfect accessory for anyone looking to stay on top of their game."
+            },
+            {
+                "id": 6,
+                "color": "red",
+                "product_name": "apple watch",
+                "price": "50.00",
+                "product_image_url": "images/3d_icons/apple_watch_red.png",
+                "description": "Stay on top of your health and daily routines with the Apple Watch. With a vibrant blue finish and a range of health and fitness tracking features, this is the perfect accessory for anyone looking to stay on top of their game."
+            }
+        ]
+    },
+    {
+        "seller_name": "apple",
+        "type": "macbook",
+        "themes": [
+            {
+                "id": 7,
+                "color": "black",
+                "product_name": "apple smart macbook",
+                "price": "500.00",
+                "product_image_url": "images/3d_icons/macbook_black.png",
+                "description": "The Apple Smart MacBook is a powerful and sleek laptop that offers a seamless user experience. With a vibrant display and advanced processing capabilities, this laptop is perfect for both personal and professional use."
+            },
+            {
+                "id": 8,
+                "color": "blue",
+                "product_name": "apple smart macbook",
+                "price": "500.00",
+                "product_image_url": "images/3d_icons/macbook_blue.png",
+                "description": "The Apple Smart MacBook is a powerful and sleek laptop that offers a seamless user experience. With a vibrant display and advanced processing capabilities, this laptop is perfect for both personal and professional use."
+            },
+            {
+                "id": 9,
+                "color": "red",
+                "product_name": "apple smart macbook",
+                "price": "500.00",
+                "product_image_url": "images/3d_icons/macbook_red.png",
+                "description": "The Apple Smart MacBook is a powerful and sleek laptop that offers a seamless user experience. With a vibrant display and advanced processing capabilities, this laptop is perfect for both personal and professional use."
+            }
+        ]
+    },
+    {
+        "seller_name": "apple",
+        "type": "mouse",
+        "themes": [
+            {
+                "id": 10,
+                "color": "black",
+                "product_name": "apple wirless mouse",
+                "price": "40.00",
+                "product_image_url": "images/3d_icons/mouse_black.png",
+                "description": "Experience seamless navigation with the black apple wireless mouse. This compact mouse is designed to offer you the comfort and precision you need while working or playing games on your device. With a price of just $40.00, this mouse is a great value for its high-quality features and design."
+            },
+            {
+                "id": 11,
+                "color": "blue",
+                "product_name": "apple wirless mouse",
+                "price": "40.00",
+                "product_image_url": "images/3d_icons/mouse_blue.png",
+                "description": "Experience seamless navigation with the black apple wireless mouse. This compact mouse is designed to offer you the comfort and precision you need while working or playing games on your device. With a price of just $40.00, this mouse is a great value for its high-quality features and design."
+            },
+            {
+                "id": 12,
+                "color": "red",
+                "product_name": "apple wirless mouse",
+                "price": "40.00",
+                "product_image_url": "images/3d_icons/mouse_red.png",
+                "description": "Experience seamless navigation with the black apple wireless mouse. This compact mouse is designed to offer you the comfort and precision you need while working or playing games on your device. With a price of just $40.00, this mouse is a great value for its high-quality features and design."
+            }
+        ]
+    },
+    {
+        "seller_name": "apple",
+        "type": "microPhone",
+        "themes": [
+            {
+                "price": "20.00",
+                "color": "green",
+                "product_name": "microphone",
+                "product_image_url": "images/3d_icons/microphone.png"
+            }
+        ]
+    }
+]

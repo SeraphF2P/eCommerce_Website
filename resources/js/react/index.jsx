@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import Header from "./header/Header";
-import "../../css/app.css";
+// import "../../css/app.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./main/HomePage";
 import LoginPage, { Data } from "./signin/LoginPage";
@@ -11,7 +11,7 @@ import PageWrapper from "./signin/PageWrapper";
 import SignUp from "./signin/SignUp";
 import ListsContext from "./ListsContext";
 function App() {
-    const [isLogedIn, setIsLogedIn] = useState(false);
+    const [isLogedIn, setIsLogedIn] = useState(true);
     return (
         <>
             <BrowserRouter>
@@ -21,10 +21,10 @@ function App() {
                             {isLogedIn ? (
                                 <Route element={<Header />}>
                                     <Route path="/" element={<HomePage />} />
-                                    <Route
+                                    {/* <Route
                                         path="/product/:id"
                                         element={<ProductInfoPage />}
-                                    />
+                                    /> */}
                                 </Route>
                             ) : (
                                 <Route element={<PageWrapper />}>
@@ -47,25 +47,6 @@ function App() {
                 </ListsContext>
             </BrowserRouter>
         </>
-=======
-import Footer from "./Footer";
-import React from "react";
-import { createRoot } from "react-dom/client";
-import Main from "./main/Main";
-import Header from "./header/Header";
-import DataProvider from "./DataProvider";
-
-function App() {
-    return (
-        <React.StrictMode>
-            <DataProvider>
-                <Header />
-                <Main />
-                <Footer />
-            </DataProvider>
-        </React.StrictMode>
->>>>>>> f841895a11ebcd8bd414b7caf4fef57111d04b1e
-    );
-}
+    )}
 
 createRoot(document.getElementById("root")).render(<App />);

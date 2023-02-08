@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useId, useRef } from "react";
 import Btn from "../components/Btn";
 import { RiAddLine } from "react-icons/ri";
@@ -7,6 +6,7 @@ import { useOnScreen } from "../../../../my/my";
 import { Link } from "react-router-dom";
 import { useCartItemsState, useFavItemsState } from "../ListsContext";
 import { itemAddRemoveToggler } from "../../../../my/formatters";
+import { motion as m } from "framer-motion";
 
 export default ({ info, index }) => {
     const ele = useRef(null);
@@ -15,7 +15,8 @@ export default ({ info, index }) => {
     const { setCartItem } = useCartItemsState();
     const addToCart = useRef(null);
     const addToFav = useRef(null);
-    const { product_image_url, product_name, seller_name, price, id } = info;
+
+    const { product_name, product_image_url, seller_name, themes } = info;
     useEffect(() => {
         if (
             JSON.parse(localStorage.getItem("cart")).some((item) => {
@@ -41,21 +42,31 @@ export default ({ info, index }) => {
     }
     return (
         <>
-            <Link className=" sr-only" ref={ele} to={"/product/" + id}></Link>
-            <div
+            <m.div
+                layout
+                initial={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 16 }}
+                whileHover={{ y: -16, transition: { ease: "linear" } }}
                 key={index}
                 onClick={clickHandler}
-                className="  h-80  w-64 overflow-hidden rounded-lg shadow-lg transition-transform hover:-translate-y-2"
+                className=" h-80  w-64  cursor-pointer overflow-hidden rounded-lg shadow "
             >
                 <>
+                    <Link
+                        className=" sr-only"
+                        ref={ele}
+                        to={"/product/" + id}
+                    ></Link>
                     <div className=" relative h-3/4 max-w-full  overflow-hidden ">
                         <img
                             className="duration-400 h-full w-full object-cover transition-transform hover:scale-105"
-                            src={product_image_url}
+                            src={themes[0].product_image_url}
                             alt="product"
                         />
-                        <div className=" absolute left-0 bottom-0 w-full truncate bg-gradient-to-r from-teal-500/90 to-teal-300/10 py-2  px-4 text-2xl  ">
-                            {product_name}
+                        <div className=" absolute left-0 bottom-0 w-full truncate bg-gradient-to-tr from-teal-500/90 to-transparent py-2  px-4 text-2xl  ">
+                            {themes[0].product_name}
                         </div>
                     </div>
                     <div className="  flex h-1/4 w-full items-center  justify-between gap-2 bg-white   px-2 ">
@@ -63,19 +74,17 @@ export default ({ info, index }) => {
                             <div className=" w-32 truncate text-2xl capitalize  ">
                                 {seller_name}
                             </div>
-                            <div>{price}$</div>
+                            <div>{themes[0].price}$</div>
                         </div>
                         <div className=" flex gap-2">
                             <Btn
+                                onToggle={["active", "bg-teal-400"]}
                                 ref={addToCart}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    e.target.classList.toggle("active");
-                                    e.target.classList.toggle("bg-teal-400");
+                                onClick={() => {
                                     itemAddRemoveToggler(
                                         "cart",
                                         setCartItem,
-                                        id
+                                        themes[0].id
                                     );
                                 }}
                                 shape="outlined"
@@ -89,11 +98,9 @@ export default ({ info, index }) => {
                             </Btn>
                             <Btn
                                 ref={addToFav}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    e.target.classList.toggle("active");
-                                    e.target.classList.toggle("bg-teal-400");
-                                    itemAddRemoveToggler("fav", setFavItem, id);
+                                onToggle={["active", "bg-teal-400"]}
+                                onClick={() => {
+                                    itemAddRemoveToggler("fav", setFavItem, themes[0].id);
                                 }}
                                 shape="outlined"
                                 className=" group p-2 group-[.active]:bg-teal-400 "
@@ -109,66 +116,7 @@ export default ({ info, index }) => {
                         </div>
                     </div>
                 </>
-            </div>
-=======
-import React, { useEffect, useMemo } from "react";
-import Card_op from "./Card_op";
-import Card_Info from "./Card_Info";
-import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
-import { useInterSectionObserver } from "../../my/my";
-const Div = styled(Box)`
-    position: relative;
-    width: 320px;
-    height: 240px;
-    .main_body {
-        position: relative;
-        width: 240px;
-        height: 240px;
-        transition: transform 0.4s linear, box-shadow 0.4s linear;
-        box-shadow: 2px 2px 16px -1px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        z-index: 1;
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-            width: 240px;
-            height: 240px;
-            z-index: 10;
-        }
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: 4px 4px 8px -2px rgba(0, 0, 0, 0.4);
-        }
-    }
-    &:hover {
-        .card_options {
-            transform: translateX(80px);
-            opacity: 1;
-        }
-    }
-`;
-export default ({ song, setsongIndexs, size }) => {
-    const { name: singer, images, song: song_name } = song;
-    const download_img = useMemo(() => {
-        return <img src={images[size].url} alt="placeholder" loading="lazy" />;
-    }, []);
-    return (
-        <>
-            <Div  className="my_card">
-                <>
-                    <div className="main_body">
-                        {download_img}
-                        <Card_Info singer={singer} song_name={song_name} />
-                    </div>
-                    <Card_op
-                        subArray_index={song.subArray_index}
-                        index={song.index}
-                        setsongIndexs={setsongIndexs}
-                    />
-                </>
-            </Div>
->>>>>>> f841895a11ebcd8bd414b7caf4fef57111d04b1e
+            </m.div>
         </>
     );
 };

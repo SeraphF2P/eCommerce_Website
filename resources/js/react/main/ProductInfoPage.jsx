@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import Btn from "../components/Btn";
-import dataBase from "../dataBase.json";
+import dataBase from "../data.json";
 export default () => {
     const id = useParams();
     const data = useMemo(() => {

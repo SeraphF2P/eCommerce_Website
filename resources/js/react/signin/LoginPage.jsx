@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Btn from "../components/Btn";
 import { toast, ToastContainer } from "react-toastify";
@@ -26,10 +26,10 @@ export default ({ setIsLogedIn }) => {
     const name = useRef("");
     const password = useRef("");
     useEffect(() => {
-        if (window.location.href != "http://127.0.0.1:8000/") {
-            const params = new URLSearchParams(
-                new URL(window.location.href).search
-            );
+        const params = new URLSearchParams(
+            new URL(window.location.href).search
+        );
+        if (params.get("name")) {
             const name = params.get("name");
             const email = params.get("email");
             const password = params.get("password");

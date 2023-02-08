@@ -26,13 +26,13 @@ export default ({ children }) => {
     const [cartItem, setCartItem, removeFromCart] = useLocalStorage("cart", []);
     return (
         <>
-            <Favitems.Provider value={favItem}>
-                <FavitemsAdd.Provider value={setFavItem}>
-                    <FavitemsRemove.Provider value={remove}>
-                        <CartItems.Provider value={cartItem}>
-                            <CartItemsAdd.Provider value={setCartItem}>
+            <Favitems.Provider key="context_1" value={favItem}>
+                <FavitemsAdd.Provider key="context_2" value={setFavItem}>
+                    <FavitemsRemove.Provider key="context_3" value={remove}>
+                        <CartItems.Provider key="context_4" value={cartItem}>
+                            <CartItemsAdd.Provider key="context_5" value={setCartItem}>
                                 <CartItemsRemove.Provider
-                                    value={removeFromCart}
+                                    key="context_6" value={removeFromCart}
                                 >
                                     {children}
                                 </CartItemsRemove.Provider>

@@ -1,5 +1,5 @@
 import React from "react";
-import Btn from "../components/Btn";
+
 import { BiSearchAlt } from "react-icons/bi";
 export default () => {
     return (

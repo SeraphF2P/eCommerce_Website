@@ -2,36 +2,35 @@ import React, { useEffect, useRef, useState } from "react";
 import useScrollLock from "../../../../my/myCustomHooks/useScrollLock";
 import { useCartItemsState } from "../ListsContext";
 import InCartItem from "./InCartItem";
-import data from "../dataBase.json";
+import data from "../data.json";
+
+import useClickOutSide from "../../my/myCustomHooks/useClickOutSide";
 export default ({ openCart, setOpenCart }) => {
     const ele = useRef(null);
     const cardContainer = useRef(null);
-    const outsideClickListener = (e) => {
-        if (!ele.current.contains(e.target)) {
-            setOpenCart(false);
-            document.body.removeEventListener("click", outsideClickListener);
-        }
-    };
     const { cartItem, setCartItem } = useCartItemsState();
 
-    useEffect(() => {
-        if (openCart) {
-            setTimeout(() => {
-                document.body.addEventListener("click", outsideClickListener);
-            }, 10);
-        }
-    }, [openCart]);
+    useClickOutSide(
+        ele,
+        () => {
+            if (openCart) {
+                setOpenCart(false);
+            }
+        },
+        {},
+        [openCart]
+    );
     useEffect(() => {
         setCartItem(() => {
             return JSON.parse(localStorage.getItem("cart"));
         });
-        // console.log([...cardContainer.current.children].length)
     }, [openCart, JSON.parse(localStorage.getItem("cart")).length]);
     useScrollLock(openCart);
     return (
         <>
             <section
                 ref={ele}
+                key="cartList"
                 className={`${
                     openCart
                         ? "clipCartMenuEnd pointer-events-auto"
@@ -57,6 +56,7 @@ export default ({ openCart, setOpenCart }) => {
                                             <InCartItem
                                                 info={item}
                                                 index={index}
+                                                key={index}
                                                 setCartItem={setCartItem}
                                             />
                                         </>
