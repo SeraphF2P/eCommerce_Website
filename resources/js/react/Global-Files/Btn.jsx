@@ -4,7 +4,7 @@ export default forwardRef(
     (
         {
             onClick,
-            onToggle = [],
+            onToggle = [[], undefined],
             children,
             shape,
             className,
@@ -15,15 +15,15 @@ export default forwardRef(
         const ele = ref ? ref : useRef(null);
         useEffect(() => {
             const classToggler = () => {
-                onToggle.map((str) => {
-                    ele.current.classList.toggle(str);
+                onToggle[0].map((str) => {
+                    ele.current.classList.toggle(str, onToggle[1]);
                 });
             };
-            if (onToggle) {
+            if (onToggle[0]) {
                 ele.current.addEventListener("click", classToggler);
             }
             return () => {
-                if (onToggle && ele.current) {
+                if (onToggle[0] && ele.current) {
                     ele.current.removeEventListener("click", classToggler);
                 }
             };
@@ -35,7 +35,9 @@ export default forwardRef(
                     ref={ele}
                     onClick={(e) => {
                         e.stopPropagation();
-                        onClick()
+                        if (typeof onClick == "function") {
+                            onClick();
+                        }
                     }}
                     className={`
                     ${

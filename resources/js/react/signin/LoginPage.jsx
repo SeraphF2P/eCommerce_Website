@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import Btn from "../components/Btn";
+import Btn from "../Global-Files/Btn";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

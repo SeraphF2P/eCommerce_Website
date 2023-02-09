@@ -8,10 +8,13 @@ export default () => {
     //     return data.map((item) => {
     //         let num1 = randomNumBetween(1, 9);
     //         let num2 = randomNumBetween(0, 9);
-    //         return { ...item, in_stock: num1 + "" + num2 };
+    //         const themes = item.themes.map((i) => {
+    //             return { ...i, in_stock: num1 + "" + num2 };
+    //         });
+    //         return { seller_name: item.seller_name, type: item.type, themes };
     //     });
     // };
-    // console.log(asd());
+    // console.log(JSON.stringify(asd()));
     return (
         <>
             <main className="  relative bg-slate-200 pt-20">
@@ -21,15 +24,22 @@ export default () => {
                     transition={{ delayChildren: 10, ease: "linear" }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="   mx-auto flex max-w-screen-lg flex-wrap justify-center gap-4  p-4  sm:gap-8  "
+                    className="   mx-auto flex max-w-screen-lg flex-wrap justify-center gap-x-8 gap-y-4  p-4  sm:gap-8  "
                 >
                     {data &&
-                        data.map((info, index) => {
-                            return (
-                                <>
-                                    <Card index={index} info={info} />
-                                </>
-                            );
+                        data.map((info, ind) => {
+                            return info.themes.map((product, index) => {
+                                return (
+                                    <>
+                                        <Card
+                                            index={ind + "-" + index}
+                                            seller_name={info.seller_name}
+                                            id={info.id}
+                                            product={product}
+                                        />
+                                    </>
+                                );
+                            });
                         })}
                 </m.section>
             </main>

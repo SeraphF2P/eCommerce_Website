@@ -3,7 +3,7 @@ import { debounce, throttle } from '../performance';
 import useCssRulesInserter from './useCssRulesInserter';
 
 export default function useScrollSensore(options, ...conditionly) {
-    const { from, to,onHold, holdFor = 1000, throttleDelay = 100, scrollOnX = false,
+    const { from, to, onHold, holdFor = 1000, throttleDelay = 100, scrollOnX = false,
         condition = [], selector = null } = { ...options };
     const scrollForwards = to ? useCssRulesInserter("scrollForwards", to) : "";
     const scrollInRevers = from ? useCssRulesInserter("scrollInRevers", from) : ""
@@ -17,13 +17,14 @@ export default function useScrollSensore(options, ...conditionly) {
     const scrollVal = useRef(0);
     let scrollMode;
     let scrollHandler = () => {
-        scrollOnHold ? elementRef.current.classList.remove(scrollOnHold) : "";
+        if (elementRef.current == undefined) return
+        scrollOnHold = elementRef.current.classList.remove(scrollOnHold);
         if (selector != null) {
             scrollMode = document.querySelector(selector).scrollTop;
         } else {
             scrollMode = (scrollOnX ? scrollX : scrollY);
         }
-        if (scrollVal.current < scrollMode ) {
+        if (scrollVal.current < scrollMode) {
             scrollVal.current = scrollMode;
             elementRef.current.classList.add(scrollForwards, (scrollVal.current < scrollMode))
             elementRef.current.classList.remove(scrollInRevers, (scrollVal.current > scrollMode))
@@ -43,6 +44,7 @@ export default function useScrollSensore(options, ...conditionly) {
         })
     };
     function scrollStop() {
+        if (elementRef.current == undefined) return
         if (elementRef.current.classList.contains(scrollOnHold) == false) {
             elementRef.current.classList.remove(scrollForwards)
             elementRef.current.classList.remove(scrollInRevers)

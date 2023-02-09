@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Btn from "../components/Btn";
+import Btn from "../Global-Files/Btn";
 import { BsTrash } from "react-icons/bs";
 export default ({ info, index, setCartItem }) => {
     const ele = useRef(null);
     const [numOfitems, setnumOfitems] = useState(1);
-    
+
     const { product_image_url, product_name, seller_name, price, id } = info;
     return (
         <>

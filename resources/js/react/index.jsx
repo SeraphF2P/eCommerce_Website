@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import Header from "./header/Header";
@@ -19,13 +18,18 @@ function App() {
                     <Data>
                         <Routes>
                             {isLogedIn ? (
-                                <Route element={<Header />}>
-                                    <Route path="/" element={<HomePage />} />
-                                    {/* <Route
+                                <>
+                                    <Route element={<Header />}>
+                                        <Route
+                                            path="/"
+                                            element={<HomePage />}
+                                        />
+                                    </Route>
+                                    <Route
                                         path="/product/:id"
                                         element={<ProductInfoPage />}
-                                    /> */}
-                                </Route>
+                                    />
+                                </>
                             ) : (
                                 <Route element={<PageWrapper />}>
                                     <Route
@@ -47,6 +51,7 @@ function App() {
                 </ListsContext>
             </BrowserRouter>
         </>
-    )}
+    );
+}
 
 createRoot(document.getElementById("root")).render(<App />);

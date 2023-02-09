@@ -4,7 +4,7 @@ import { BiSearchAlt } from "react-icons/bi";
 export default () => {
     return (
         <>
-            <div className="  flex w-48 items-center justify-between xsm:w-64 sm:w-72">
+            <div className=" flex w-48 items-center justify-between xsm:w-64 sm:w-72">
                 <input
                     placeholder="search"
                     type="text"

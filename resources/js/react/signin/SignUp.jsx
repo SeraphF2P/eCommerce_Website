@@ -1,8 +1,7 @@
-import React, {  useRef } from "react";
+import React, { useRef } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Btn from "../components/Btn";
-
+import Btn from "../Global-Files/Btn";
 
 export default () => {
     const form = useRef(null);
