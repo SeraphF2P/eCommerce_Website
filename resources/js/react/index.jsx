@@ -1,54 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
-import Header from "./header/Header";
-// import "../../css/app.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./main/HomePage";
-import LoginPage, { Data } from "./signin/LoginPage";
-import ProductInfoPage from "./main/ProductInfoPage";
-import PageWrapper from "./signin/PageWrapper";
-import SignUp from "./signin/SignUp";
-import ListsContext from "./ListsContext";
+
+import Header from "./pages/header/Header";
+import HomePage from "./pages/main/HomePage";
+import ProductInfoPage from "./pages/main/ProductInfoPage";
+import RegesterPage from "./pages/signin/RegesterPage";
+import CartListContext from "./context/CartListContext";
+import WishListContext from "./context/WishListContext";
+import Access_denied from "./pages/Access_denied";
+import NotFound from "./pages/NotFound";
+
 function App() {
-    const [isLogedIn, setIsLogedIn] = useState(true);
     return (
         <>
             <BrowserRouter>
-                <ListsContext>
-                    <Data>
+                <CartListContext>
+                    <WishListContext>
                         <Routes>
-                            {isLogedIn ? (
-                                <>
-                                    <Route element={<Header />}>
-                                        <Route
-                                            path="/"
-                                            element={<HomePage />}
-                                        />
-                                    </Route>
+                            <>
+                                <Route element={<Header />}>
                                     <Route
-                                        path="/product/:id"
-                                        element={<ProductInfoPage />}
-                                    />
-                                </>
-                            ) : (
-                                <Route element={<PageWrapper />}>
-                                    <Route
-                                        path="/"
-                                        element={
-                                            <LoginPage
-                                                setIsLogedIn={setIsLogedIn}
-                                            />
-                                        }
-                                    />
-                                    <Route
-                                        path="/signup"
-                                        element={<SignUp />}
+                                        path="/homepage"
+                                        element={<HomePage />}
                                     />
                                 </Route>
-                            )}
+                                <Route
+                                    path="/product/:id"
+                                    element={<ProductInfoPage />}
+                                />
+                            </>
+                            <Route path="/" element={<RegesterPage />} />
+                            <Route
+                                path="/access-denied"
+                                element={<Access_denied />}
+                            />
+                            <Route path="/*" element={<NotFound />} />
                         </Routes>
-                    </Data>
-                </ListsContext>
+                    </WishListContext>
+                </CartListContext>
             </BrowserRouter>
         </>
     );

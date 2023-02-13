@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "xsm": "420px"
+        "xxsm": "420px",
+        "xsm": "576px",
       },
       textColor: {
         regular: "rgb(var(--text),<alpha-value>)",
@@ -13,17 +14,17 @@ module.exports = {
         inverted: "rgb(var(--text-inverted),<alpha-value>)",
         hover: "rgb(var(--text-hover),<alpha-value>)",
       },
-      backgroundColor: {
-        skin: {
-          fill: "rgb(var(--bg),<alpha-value>)",
-          gradient: "rgb(var(--bg-gradiant),<alpha-value>)",
-          btnFill: "rgb(var(--btn-fill),<alpha-value>)",
-          btnAccent: "rgb(var(--btn-accent),<alpha-value>)",
-          btnAccentHover: "rgb(var(--btn-accent-hover),<alpha-value>)",
-          btnMuted: "rgb(var(--btn-muted),<alpha-value>)",
-        },
+      // backgroundColor: {
+      //   skin: {
+      //     fill: "rgb(var(--bg),<alpha-value>)",
+      //     gradient: "rgb(var(--bg-gradiant),<alpha-value>)",
+      //     btnFill: "rgb(var(--btn-fill),<alpha-value>)",
+      //     btnAccent: "rgb(var(--btn-accent),<alpha-value>)",
+      //     btnAccentHover: "rgb(var(--btn-accent-hover),<alpha-value>)",
+      //     btnMuted: "rgb(var(--btn-muted),<alpha-value>)",
+      //   },
 
-      },
+      // },
       animation: {
         'fade-up': 'fade-up 1s ease-out 0s ',
         'expand': 'expand 1s ease-out forwards',

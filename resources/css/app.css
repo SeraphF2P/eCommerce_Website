@@ -25,20 +25,9 @@
 }
 .snaps-y-container > * {
     scroll-snap-align: start;
-    
+    color: #14b8a6;
 }
-.clipCartMenuStart {
-    clip-path: circle(0% at calc(100% - 40px) 40px);
-}
-.clipCartMenuEnd {
-    clip-path: circle(200% at 100% 0);
-}
-.clipMenuStart {
-    clip-path: circle(0% at 40px 40px);
-}
-.clipMenuEnd {
-    clip-path: circle(200% at 100% 0);
-}
+
 .text-mode-v-rl {
     writing-mode: vertical-rl;
 }

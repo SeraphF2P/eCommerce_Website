@@ -9,9 +9,8 @@ export default function useEventListener(
   useEffect(() => {
     callbackRef.current = callback
   }, [callback])
-  
+
   useEffect(() => {
-    console.log(element)
     if (element == null) return
     const handler = e => callbackRef.current(e)
     element.addEventListener(eventType, handler)

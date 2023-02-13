@@ -1,26 +1,30 @@
 
-import { useEffect, useRef } from "react";
-export default function useActive({elementsClass, addClass = "active", eventType = "click"}) {
-    const elements = useRef([])
+import { useEffect } from "react";
+export default function useActive({ refs, addClass = "active", eventType = "click" }, dependencyArray = []) {
+    // const { refs, addClass = "active", eventType = "click" } = defaultValues;
     function fun(e) {
-        elements.current.map(ele => {
+        refs.current.map(ele => {
             ele.classList.remove(addClass);
         })
         e.target.classList.add(addClass);
     }
+    function reset(e) {
+        refs.current.map(ele => {
+            ele.classList.remove(addClass);
+        })
+    }
     useEffect(() => {
-    elements.current = [...document.querySelectorAll(elementsClass)] 
-     
-        if (elements.current == null) return
-        elements.current.map(ele => {
+        if (refs.current == undefined) return
+        refs.current.map(ele => {
             ele.addEventListener(eventType, fun)
         })
         return (() => {
-            elements.current.map(ele => {
-                ele.removeEventListener(eventType, fun)
+            refs.current.map(ele => {
+                if (ele) {
+                    ele.removeEventListener(eventType, fun)
+                }
             })
         })
-
-    }, [])
-
+    }, dependencyArray)
+    return reset
 }
