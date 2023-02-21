@@ -4,7 +4,9 @@ export default forwardRef(
     (
         {
             onClick,
-            onToggle = [[], undefined],
+            onToggle,
+            isToggled = undefined,
+            toggleDependencies,
             children,
             shape,
             className,
@@ -15,20 +17,27 @@ export default forwardRef(
         const ele = ref ? ref : useRef(null);
         useEffect(() => {
             if (onToggle == undefined) return;
+
+            const classes = onToggle.split(" ").filter((item) => {
+                return item != "";
+            });
             const classToggler = () => {
-                onToggle[0].map((str) => {
-                    ele.current.classList.toggle(str, onToggle[1]);
+                classes.map((str) => {
+                    ele.current.classList.toggle(str);
                 });
             };
-            if (onToggle[0]) {
-                ele.current.addEventListener("click", classToggler);
-            }
+            classes.map((str) => {
+                ele.current.classList.toggle(str, isToggled);
+            });
+
+            ele.current.addEventListener("click", classToggler);
+
             return () => {
-                if (onToggle[0] && ele.current) {
+                if (ele.current) {
                     ele.current.removeEventListener("click", classToggler);
                 }
             };
-        }, []);
+        }, [toggleDependencies]);
 
         return (
             <>
@@ -43,13 +52,13 @@ export default forwardRef(
                     className={`
                     ${
                         shape == "filled"
-                            ? " rounded-full bg-teal-500 text-regular shadow-lg active:bg-teal-400 disabled:!bg-gray-300 disabled:text-gray-500"
+                            ? " rounded-full bg-btn-fill  text-inverted shadow-sm shadow-btn-accent hover:bg-btn-hover active:bg-btn-active disabled:bg-btn-muted disabled:text-muted"
                             : shape == "outlined"
-                            ? " rounded-full border-4 border-solid border-teal-500 text-inverted shadow-lg active:bg-teal-400  disabled:border-4 disabled:border-solid disabled:border-gray-400"
+                            ? " rounded-full border-4 border-solid bg-slate-50/80  border-btn-fill shadow-sm shadow-btn-fill active:bg-btn-active  disabled:border-4  disabled:border-solid disabled:border-btn-muted  disabled:text-muted"
                             : "active:shadow-inner"
                     } 
                     ${className} 
-                    duration-400  transition-transform hover:scale-105 
+                    duration-400  transition-transform hover:scale-105 active:scale-100 disabled:hover:scale-100
                     `}
                     {...props}
                 >

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import LoginPage from "./LoginPage";
+import React, { useRef, useState } from "react";
+import Login from "./Login";
 import { motion as m, AnimatePresence } from "framer-motion";
 import SignUp from "./SignUp";
 import { ToastContainer } from "react-toastify";
@@ -7,9 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 import NewPage from "../../components/NewPage";
 import {
     fadeInItem,
-    loginSlide,
     overlayer,
-    signUpSlide,
+    slideIn,
+    slideOut,
 } from "../../components/animate";
 
 export default () => {
@@ -17,10 +17,10 @@ export default () => {
 
     return (
         <>
-            <NewPage className=" flex items-center  ">
+            <NewPage className="  flex  items-center ">
                 <ToastContainer />
                 <div
-                    className={`relative flex   h-[480px] w-full overflow-hidden  rounded  shadow-lg xxsm:mx-4 xsm:mx-auto xsm:w-full xsm:max-w-screen-md  md:mx-auto`}
+                    className={`relative flex  h-[480px] w-full   rounded  shadow-lg xxsm:mx-4 xsm:mx-auto xsm:w-full xsm:max-w-screen-md  md:mx-auto`}
                 >
                     <img
                         className=" absolute top-0 left-0 h-full w-full object-cover"
@@ -29,7 +29,7 @@ export default () => {
                     />
                     <div className=" absolute top-0 left-0 flex h-full w-full  ">
                         <div className=" h-full w-1/2  ">
-                            <AnimatePresence>
+                            <AnimatePresence initial="false">
                                 {haveAnAccount == false && (
                                     <>
                                         <m.div
@@ -63,7 +63,7 @@ export default () => {
                             </AnimatePresence>
                         </div>
                         <div className=" h-full w-1/2     ">
-                            <AnimatePresence>
+                            <AnimatePresence initial={false}>
                                 {haveAnAccount && (
                                     <>
                                         <m.div
@@ -100,7 +100,7 @@ export default () => {
                     <AnimatePresence initial={false}>
                         {haveAnAccount ? (
                             <m.section
-                                variants={loginSlide}
+                                variants={slideIn}
                                 initial="hidden"
                                 animate="show"
                                 exit="hidden"
@@ -108,13 +108,11 @@ export default () => {
                                 key="LoginPage"
                                 className="  absolute top-0  left-0 flex h-full w-full flex-col   items-center justify-center bg-slate-100/80  p-4   shadow-md xsm:w-1/2"
                             >
-                                <LoginPage
-                                    setHaveAnAccount={setHaveAnAccount}
-                                />
+                                <Login setHaveAnAccount={setHaveAnAccount} />
                             </m.section>
                         ) : (
                             <m.section
-                                variants={signUpSlide}
+                                variants={slideOut}
                                 initial="hidden"
                                 animate="show"
                                 exit="hidden"

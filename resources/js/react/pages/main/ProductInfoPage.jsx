@@ -1,18 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Btn from "../../components/Btn";
-import dataBase from "../../data.json";
 import { motion as m, AnimatePresence } from "framer-motion";
 import { fadeUp } from "../../components/animate";
-import tinycolor from "tinycolor2";
-
-function colorIntoHex(color) {
-    if ((color.startsWith("#") && color.length == 7) || color.length == 9) {
-        return color;
-    } else {
-        return tinycolor(color).toHexString();
-    }
-}
+import { toast } from "react-toastify";
+import axios from "axios";
+import { Host } from "../../host";
+import { randomNumBetween } from "../../utility_function/other";
+import { formatCurrency } from "../../utility_function/formatters";
 
 export default () => {
     const nav = useNavigate();
@@ -21,26 +16,45 @@ export default () => {
             nav("/access-denied");
         }
     }, []);
-    const uniqePath = useParams();
-    const id = +uniqePath.id.split("-")[0];
-    const theme = +uniqePath.id.split("-")[1];
-    const product = useMemo(() => {
-        return dataBase.find((item) => {
-            return item.id == id;
-        });
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+    const getData = async () => {
+        try {
+            const res = await axios.get(`${Host}api/post/view`, {
+                params: {
+                    uniqueId: id,
+                },
+                headers: {
+                    Accept: "application/json",
+                    Authorization: "Bearer " + localStorage.getItem("token"),
+                },
+            });
+            if (res.status === 200) {
+                if (res.data.success === 1) {
+                    setProduct(res.data.post);
+                }
+            }
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
+    useEffect(() => {
+        getData();
     }, []);
-    const [currentTheme, setCurrentTheme] = useState(product.themes[theme - 1]);
-    const { product_image_url, price, product_name, description, in_stock } =
-        currentTheme;
+    const {
+        price,
+        title: product_name,
+        product_image_url = `https://picsum.photos/1000/1000?random=${randomNumBetween(
+            0,
+            1000
+        )}`,
+        description,
+        seller_name,
+    } = product;
+
     return (
         <>
             <section
-                style={{
-                    background:
-                        colorIntoHex(currentTheme.color).length == 7
-                            ? colorIntoHex(currentTheme.color) + "55"
-                            : colorIntoHex(currentTheme.color),
-                }}
                 className={`flex   h-screen  w-screen items-center justify-center bg-opacity-20`}
             >
                 <m.div
@@ -69,7 +83,7 @@ export default () => {
                     <div className="   flex h-3/5 flex-col p-4 sm:h-full sm:w-1/2 sm:justify-center sm:gap-4 ">
                         <div className=" flex w-full items-center  justify-between p-2">
                             <div className=" max-w-[50%]   capitalize ">
-                                {product.seller_name}
+                                {seller_name}
                             </div>
 
                             <Btn
@@ -81,32 +95,9 @@ export default () => {
                         </div>
                         <div className=" p-2 capitalize">
                             on stack :
-                            <span className=" text-zinc-500"> {in_stock} </span>
+                            <span className=" text-zinc-500"> num </span>
                         </div>
                         <div className=" relative flex gap-2 p-2">
-                            {product.themes &&
-                                product.themes.map((theme, ind) => {
-                                    return (
-                                        <>
-                                            <Btn
-                                                key={ind}
-                                                style={{
-                                                    background: theme.color,
-                                                }}
-                                                onClick={() => {
-                                                    setCurrentTheme(
-                                                        product.themes[ind]
-                                                    );
-                                                }}
-                                                className=" h-8 w-8 rounded-full shadow shadow-github"
-                                            >
-                                                <span className=" sr-only">
-                                                    product theme {theme.color}
-                                                </span>
-                                            </Btn>
-                                        </>
-                                    );
-                                })}
                             <div
                                 className=" absolute -right-10 top-4 w-24 
                                 rounded-tl rounded-bl rounded-tr-full  rounded-br-full bg-emerald-400 
@@ -115,7 +106,7 @@ export default () => {
                         before:h-12 before:w-6 before:rounded-tr-full before:rounded-br-full 
                          before:bg-gradient-to-r  before:from-emerald-400/90  before:to-emerald-500 "
                             >
-                                {price}$
+                                {formatCurrency(price)}
                             </div>
                         </div>
                         <div className=" overflow-hidden p-2">

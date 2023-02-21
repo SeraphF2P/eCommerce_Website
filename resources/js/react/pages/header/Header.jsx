@@ -12,6 +12,7 @@ import BurgerMenuBtn from "./BurgerMenuBtn";
 import Btn from "../../components/Btn";
 
 import { useCartItemsState } from "../../context/CartListContext";
+import { ToastContainer } from "react-toastify";
 
 export default () => {
     const nav = useNavigate();
@@ -25,7 +26,8 @@ export default () => {
         inReverse: "transform:translateY(-100%);",
         onHold: "transform:translateY(0);",
     });
-    const [openCart, setOpenCart] = useState(true);
+
+    const [openCart, setOpenCart] = useState(false);
     const [openMenu, setOpenMenu] = useState(false);
     useEffect(() => {
         if (openCart && openMenu) {
@@ -41,11 +43,12 @@ export default () => {
 
     return (
         <>
+            <ToastContainer />
             <header
                 ref={elementRef}
-                className="fixed top-0 left-0 z-50 flex  h-20 w-full bg-black/90 text-regular transition-transform duration-1000"
+                className=" fixed top-0 left-0  z-50 flex   h-20 w-full bg-black/90 text-inverted transition-transform duration-1000"
             >
-                <nav className=" flex h-full  w-full flex-row-reverse items-center justify-between gap-2 px-4">
+                <nav className="  flex h-full  w-full flex-row-reverse items-center justify-between gap-2 px-4">
                     <Btn
                         type="button"
                         className={`${

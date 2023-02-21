@@ -1,0 +1,1 @@
+export const Host = "http://api.inspiration-sy.com:8880/" 

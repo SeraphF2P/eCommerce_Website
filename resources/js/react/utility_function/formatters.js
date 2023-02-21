@@ -43,20 +43,30 @@ export function formatRelativeDate(toDate, fromDate = new Date()) {
 }
 
 
-export function itemAddRemoveToggler(localStorageKey, set, id) {
+export function itemAddRemoveToggler(localStorageKey, set, data, comparedByKey = "uniqueId") {
   const localVals = JSON.parse(localStorage.getItem(localStorageKey));
 
   const index = localVals.findIndex((item) => {
-    return item == id;
+    return item[comparedByKey] == data[comparedByKey];
   });
   if (index == -1) {
     set((prev) => {
-      return [...prev,  id ];
+      return [...prev, data];
     });
   } else {
-    set((prev) => {
-      return [...prev.slice(0, index), ...prev.slice(index + 1)];
-    });
+    const newArray = new Set(localVals)
+    newArray.delete(localVals[index])
+    set([...newArray]);
   }
+}
+export function itemUpdater(localStorageKey, set, data, comparedByKey = "uniqueId", newData) {
+  const localVals = JSON.parse(localStorage.getItem(localStorageKey));
 
+  const index = localVals.findIndex((item) => {
+    return item[comparedByKey] == data[comparedByKey];
+  });
+  if (index == -1) return
+  const newArray = new Set(localVals)
+  newArray.delete(localVals[index])
+  set([...newArray, { ...localVals[index], ...newData }]);
 }
