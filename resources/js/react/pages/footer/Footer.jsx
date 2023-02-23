@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 export default () => {
     return (
-        <div className="bg-gray-700/90 prose-a:text-gray-300 prose-a:transition-colors prose-a:duration-300 hover:prose-a:text-teal-400">
+        <div className="bg-gray-700/90 prose-h3:text-slate-100 prose-a:text-gray-300 prose-a:transition-colors prose-a:duration-300 hover:prose-a:text-teal-400">
             <div className="mx-auto px-4 pt-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
                 <div className="row-gap-10 mb-8 grid lg:grid-cols-6">
                     <div className="row-gap-8 grid grid-cols-2 gap-5 md:grid-cols-4 lg:col-span-4">
